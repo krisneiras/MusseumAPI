@@ -51,6 +51,27 @@ export const addNewSculpture = async (req, response) =>{
 }
 
 //UPDATE  (PUT)
+export const editSculpture = async (req, response) =>{
+
+  const sculptureId  = req.params.id;
+
+  try{
+    const editedSculpture = await SculptureModel.update({
+      image_url: req.body.image_url,
+      title: req.body.title,
+      author: req.body.author,
+      material: req.body.material,
+      year: req.body.year,
+      location: req.body.location
+    }, {where: {id: sculptureId} }); 
+
+    response.status(200).json({ message: `Sculpture with ID ${sculptureId} updated successfully`, sculpture: editedSculpture })  // la clausula where es importante porque sino eliminariamos o borrariamos toda la base de datos.
+  }
+
+  catch(error){
+    response.status(500).json({message: error.message})
+  }
+}
  
 //GET UNA ESCULTURA
 
@@ -59,7 +80,7 @@ export const addNewSculpture = async (req, response) =>{
   try{
     const id = req.params.sculpture.id
     const sculpture = await sculptures.findOne({
-      where: id
+      where: {id : id }
     });
     response.status(200).json(sculptures);
   }
