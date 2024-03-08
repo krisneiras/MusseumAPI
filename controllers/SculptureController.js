@@ -19,10 +19,9 @@ export const deleteSculpture = async (req, res) => {
    
     try {
        const deletedSculpture = await SculptureModel.destroy({ where: { id: sculptureId } });
-       
-       {
-         res.status(200).json({ message: `Sculpture with ID ${id} deleted succesfully` });
-       }
+        
+          res.status(200).json({ message: `Sculpture with ID ${sculptureId} deleted successfully` });
+
         } 
     
     catch (error) {
@@ -30,8 +29,30 @@ export const deleteSculpture = async (req, res) => {
     }
    };
 
+// POST (INSERT)
+
+export const addNewSculpture = async (req, response) =>{
+  
+  try{
+    const newSculpture = await SculptureModel.create({
+      image_url: req.body.image_url,
+      title: req.body.title,
+      author: req.body.author,
+      material: req.body.material,
+      year: req.body.year,
+      location: req.body.location
+    });
+    response.status(200).json(newSculpture)
+  }
+
+  catch(error){
+    response.status(500).json({message: error.message})
+}
+}
+
+//UPDATE  (PUT)
  
-//GET UNA ESCULTUrA
+//GET UNA ESCULTURA
 
 /* export const getOneSculpture = async (req, res) =>{
 
@@ -47,3 +68,5 @@ export const deleteSculpture = async (req, res) => {
     response.status(500).json({message: error.message})
   }
 } */
+
+//PATCH
