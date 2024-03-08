@@ -3,15 +3,36 @@ import { DataTypes } from 'sequelize';
 import connection_db from '../database/connection_db.js';
 
 const SculptureModel = connection_db.define('Sculpture', {
+ id: {
+   type: DataTypes.BIGINT,
+   primaryKey: true,
+   autoIncrement: true,
+   unique: true
+ },
+ image_url: {
+   type: DataTypes.STRING(500),
+   allowNull: false
+ },
  title: {
-    type: DataTypes.STRING,
+    type: DataTypes.STRING(100),
     allowNull: false
  },
  author: {
-    type: DataTypes.STRING,
+    type: DataTypes.STRING(100),
     allowNull: false
  },
-
+ material:{
+   type: DataTypes.STRING(100),
+   allowNull: false
+ },
+ year:{
+   type: DataTypes.BIGINT,
+   allowNull: false
+ },
+ location:{
+   type: DataTypes.STRING(100),
+   allowNull: false
+ }
 },
 {
     // Opciones adicionales del modelo

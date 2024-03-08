@@ -2,15 +2,13 @@ import connection_db from "./database/connection_db.js";
 import SculptureModel from "./models/SculptureModel.js";
 import express from "express";
 import {DB_PORT} from "./config.js"
+import SculptureRouter from "./routes/SculptureRouter.js"
+
 
 const app = express();
 
-app.get('/', (req,res) => {
-  res.send('Hola, soy una API')
-})
+app.use("/api", SculptureRouter)
 
-
-async function main(){
 try {
     await connection_db.authenticate();
     console.log('Connection has been established successfully.🚀🚀🚀');
@@ -21,10 +19,8 @@ try {
   } catch (error) {
     console.error('Unable to connect to the database:', error);
   }
-}
 
-main();
 
 app.listen(DB_PORT, () =>{
-  console.log(`Escuchando en el puerto ${DB_PORT}`)
+  console.log(`Server up in  http://localhost:${DB_PORT}/api`)
 });
