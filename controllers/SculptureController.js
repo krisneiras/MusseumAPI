@@ -1,5 +1,7 @@
 import SculptureModel from "../models/SculptureModel.js"
+import { validationResult } from "express-validator";
 
+//GET SCULPTURES
 export const getAllSculptures = async (request, response) =>{
 
     try{
@@ -20,7 +22,7 @@ export const deleteSculpture = async (req, res) => {
     try {
        const deletedSculpture = await SculptureModel.destroy({ where: { id: sculptureId } });
         
-          res.status(200).json({ message: `Sculpture with ID ${sculptureId} deleted successfully` });
+          res.status(200).json({ message: `Sculpture with ID ${sculptureId} deleted successfully`, sculpture: deletedSculpture });
 
         } 
     
@@ -33,6 +35,11 @@ export const deleteSculpture = async (req, res) => {
 
 export const addNewSculpture = async (req, response) =>{
   
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+     return response.status(400).json({ errors: errors.array() });   //Los errores tienen que ir antes de la logica de nuestro proyecto
+  }
+
   try{
     const newSculpture = await SculptureModel.create(req.body);
     response.status(200).json(newSculpture)
