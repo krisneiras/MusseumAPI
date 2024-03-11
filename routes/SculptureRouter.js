@@ -1,6 +1,5 @@
 import express from "express";
-import { addNewSculpture, editSculpture, getAllSculptures } from "../controllers/SculptureController.js"
-import { deleteSculpture } from "../controllers/SculptureController.js"; 
+import { addNewSculpture, editSculpture, getAllSculptures, deleteSculpture, getOneSculpture } from "../controllers/SculptureController.js"
 
 const router = express.Router() //estamos invocado el enrutador
 
@@ -20,4 +19,6 @@ router.post('/', addNewSculpture)
 
 router.put('/:id', editSculpture)
 
-//PATCH
+// GET ONE
+
+router.get('/:id', getOneSculpture)

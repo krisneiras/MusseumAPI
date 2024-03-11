@@ -73,21 +73,18 @@ export const editSculpture = async (req, response) =>{
   }
 }
  
-//GET UNA ESCULTURA
+//GET ONE SCULPTURE
 
-/* export const getOneSculpture = async (req, res) =>{
+export const getOneSculpture = async (req, res) => {
+  const sculptureId  = req.params.id;
 
   try{
-    const id = req.params.sculpture.id
-    const sculpture = await sculptures.findOne({
-      where: {id : id }
-    });
-    response.status(200).json(sculptures);
+    const oneSculpture = await SculptureModel.findOne({ where: {id: sculptureId} });
+    res.status(200).json(oneSculpture);
   }
 
   catch(error){
-    response.status(500).json({message: error.message})
+    res.status(500).json({message: error.message})
   }
-} */
+}
 
-//PATCH

@@ -15,7 +15,7 @@ try {
     await connection_db.authenticate();
     console.log('Connection has been established successfully.🚀🚀🚀');
 
-    await SculptureModel.sync({force: true});
+    await SculptureModel.sync();
     console.log('The model has been synchronized succesfully 🚀')
 
   } catch (error) {
