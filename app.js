@@ -7,7 +7,6 @@ import chalk from "chalk";
 
 const app = express();
 
-
 app.use(express.json()); // para que la aplicacion pueda soportar formato json desde postman (Middleware para parsear el cuerpo de las solicitudes en formato JSON)
 
 app.use("/api", SculptureRouter)
@@ -27,3 +26,6 @@ try {
 app.listen(DB_PORT, () =>{
   console.log(chalk.bgMagenta.bold(`Server up in  http://localhost:${DB_PORT}/api`))
 });
+
+export default app;
+

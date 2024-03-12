@@ -22,7 +22,7 @@ export const deleteSculpture = async (req, res) => {
     try {
        const deletedSculpture = await SculptureModel.destroy({ where: { id: sculptureId } });
         
-          res.status(200).json({ message: `Sculpture with ID ${sculptureId} deleted successfully`, sculpture: deletedSculpture });
+          res.status(201).json({ message: `Sculpture with ID ${sculptureId} deleted successfully`, sculpture: deletedSculpture });
 
         } 
     
@@ -34,15 +34,10 @@ export const deleteSculpture = async (req, res) => {
 // POST (INSERT)
 
 export const addNewSculpture = async (req, response) =>{
-  
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-     return response.status(400).json({ errors: errors.array() });   //Los errores tienen que ir antes de la logica de nuestro proyecto
-  }
 
   try{
     const newSculpture = await SculptureModel.create(req.body);
-    response.status(200).json(newSculpture)
+    response.status(201).json(newSculpture)
   }
 
   catch(error){
@@ -59,7 +54,7 @@ export const editSculpture = async (req, response) =>{
     await SculptureModel.update(req.body, {where: {id: sculptureId} }); 
 
     const editedSculpture = await SculptureModel.findOne({ where: { id: sculptureId } });
-    response.status(200).json({ message: `Sculpture with ID ${sculptureId} updated successfully: `, sculpture: editedSculpture })  // la clausula where es importante porque sino eliminariamos o borrariamos toda la base de datos.
+    response.status(201).json({ message: `Sculpture with ID ${sculptureId} updated successfully: `, sculpture: editedSculpture })  // la clausula where es importante porque sino eliminariamos o borrariamos toda la base de datos.
   }
 
   catch(error){

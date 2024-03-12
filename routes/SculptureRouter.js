@@ -4,11 +4,11 @@ import { sculptureValidationRules } from "../validators/SculptureValidator..js";
 
 const router = express.Router() //estamos invocado el enrutador
 
-router.get('/', sculptureValidationRules, getAllSculptures);
+router.get('/', getAllSculptures);
 
 //DELETE
 
-router.delete('/:id', sculptureValidationRules, deleteSculpture);
+router.delete('/:id', deleteSculpture);
 
 // POST
 
@@ -20,7 +20,7 @@ router.put('/:id', sculptureValidationRules, editSculpture);
 
 // GET ONE
 
-router.get('/:id', sculptureValidationRules, getOneSculpture);
+router.get('/:id', getOneSculpture);
 
 
 export default router;
