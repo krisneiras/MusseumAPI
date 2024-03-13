@@ -1,0 +1,24 @@
+Carpeta database:
+- connection_db.js (es el archivo que conecta con la base de datos, en nuestro caso está en local -> localhost. Sequelize hace de traductor y conector entre js del visual code y sql de mysql)
+
+Carpeta models:
+- LoqueseaModel.js (en este archivo conectamos con la base de datos y creamos esta tabla. Aquí creo los valores que contendrá mi tabla en MySQL)
+
+Carpeta controllers
+- LoqueseaController.js (aquí tenemos los métodos que estamos sacando, van a ser las funciones que le damos a la tabla. Obtener la información, modificarla, borrarla, añadir)
+
+Carpeta routes
+- LoqueseaRouter (le pasamos el método y la url y activa la función que le hemos metido)
+
+App.js (conecta todo, levanta mi servidor y conecta mis rutas)
+
+
+VALIDACIONES
+instalar express-validator -> npm install express-validator
+
+Carpeta validators
+loqueseaValidator.js (creo mis validaciones con check)
+
+
+TEST
+instalamos npm install jest supertest
