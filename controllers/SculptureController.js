@@ -1,5 +1,4 @@
 import SculptureModel from "../models/SculptureModel.js"
-import { validationResult } from "express-validator";
 
 //GET SCULPTURES
 export const getAllSculptures = async (request, response) =>{
@@ -53,8 +52,8 @@ export const editSculpture = async (req, response) =>{
   try{
     await SculptureModel.update(req.body, {where: {id: sculptureId} }); 
 
-    const editedSculpture = await SculptureModel.findOne({ where: { id: sculptureId } });
-    response.status(201).json({ message: `Sculpture with ID ${sculptureId} updated successfully: `, sculpture: editedSculpture })  // la clausula where es importante porque sino eliminariamos o borrariamos toda la base de datos.
+    const editedSculpture = await SculptureModel.findOne({ where: { id: sculptureId } });  // aqui  podria usar findByPk(id) que encuente mi primary key que es el id
+    response.status(200).json({ message: `Sculpture with ID ${sculptureId} updated successfully: `, sculpture: editedSculpture })  // la clausula where es importante porque sino eliminariamos o borrariamos toda la base de datos.
   }
 
   catch(error){

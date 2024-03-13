@@ -15,7 +15,7 @@ try {
     await connection_db.authenticate();
     console.log(chalk.blueBright('Connection has been established successfully.🚀🚀🚀'));
 
-    await SculptureModel.sync();
+    await SculptureModel.sync();  //esto podemos tenerlo dentro del modelo
     console.log(chalk.greenBright('The model has been synchronized succesfully 👩🏼‍💻'))
 
   } catch (error) {
