@@ -37,4 +37,19 @@ describe('Testing CRUD sculptures', ()=>  {
         expect(response.status).toBe(201); 
     });
 
+    test('Put request should update a sculpture value and return OK', async () => {
+
+        const id  = 42;
+
+        const response = await api.put(`/api/${id}`).send({
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Michelangelo%27s_David_-_right_view_2.jpg/270px-Michelangelo%27s_David_-_right_view_2.jpg",
+            "title": "test",
+            "author": "Carlos",
+            "material": "test",
+            "year": 1977,
+            "location": "test"
+        });
+        expect(response.status).toBe(200);
+    });
+
 });
