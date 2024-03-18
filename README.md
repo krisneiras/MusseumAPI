@@ -1,5 +1,7 @@
 
-Proyecto 06 API MUSEO
+<div align="center">
+  <h1>Proyecto 06 API MUSEO</h1>
+</div>
 
 ## Descripción del Proyecto:
 
@@ -64,7 +66,10 @@ package.json: Archivo de configuración del proyecto que incluye las dependencia
 
 bash
 Copy code
+     ```bash
      git clone https://github.com/krisneiras/MusseumAPI.git
+      ```
+
 Navega hasta el directorio del proyecto:
 
 bash
