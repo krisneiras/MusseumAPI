@@ -70,32 +70,35 @@ package.json: Archivo de configuración del proyecto que incluye las dependencia
     git clone https://github.com/krisneiras/MusseumAPI.git
     ```
 
-Navega hasta el directorio del proyecto:
+2. **Navega hasta el directorio del proyecto:**
 
-bash
-Copy code
-     cd project
-Instala las dependencias del proyecto:
+    ```bash
+    cd project
+    ```
 
-Copy code
-     npm install
-Ejecuta las migraciones de la base de datos para crear las tablas:
+3. **Instala las dependencias del proyecto:**
 
-Copy code
-     npx sequelize-cli db:migrate
-Inicia el servidor en modo de desarrollo:
+    ```bash
+    npm install
+    ```
 
-arduino
-Copy code
-     npm run dev
-Esto iniciará el servidor en el puerto 5000 por defecto.
+4. **Ejecuta las migraciones de la base de datos para crear las tablas:Inicia el servidor en modo de desarrollo:**
 
-Para ejecutar las pruebas automatizadas:
+    ```bash
+    npx sequelize-cli db:migrate
+    ```
 
 arduino
-Copy code
-     npm run test
+5. **Esto iniciará el servidor en el puerto 5000 por defecto.**
+    ```bash
+    npm run dev
+    ```  
 
+arduino
+6. **Para ejecutar las pruebas automatizadas:**
+    ```bash
+    npm run test
+    ```  
 
 ## Dependencias del Proyecto
 
