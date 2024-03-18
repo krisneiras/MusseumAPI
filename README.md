@@ -64,11 +64,11 @@ package.json: Archivo de configuración del proyecto que incluye las dependencia
 
 ## Clona el repositorio desde GitHub:
 
-bash
-Copy code
-     ```bash
-     git clone https://github.com/krisneiras/MusseumAPI.git
-      ```
+1. **Clona el Repositorio:**
+
+    ```bash
+    git clone https://github.com/krisneiras/MusseumAPI.git
+    ```
 
 Navega hasta el directorio del proyecto:
 
