@@ -88,13 +88,11 @@ package.json: Archivo de configuración del proyecto que incluye las dependencia
     npx sequelize-cli db:migrate
     ```
 
-arduino
 5. **Esto iniciará el servidor en el puerto 5000 por defecto.**
     ```bash
     npm run dev
     ```  
-
-arduino
+    
 6. **Para ejecutar las pruebas automatizadas:**
     ```bash
     npm run test
