@@ -1,11 +1,11 @@
 
 Proyecto 06 API MUSEO
 
-Descripción del Proyecto:
+## Descripción del Proyecto:
 
 El proyecto "API MUSEO" es una API RESTful desarrollada en Node.js utilizando Express.js y Sequelize como ORM para interactuar con una base de datos relacional. La API permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre recursos de esculturas en un museo.
 
-Estructura del Proyecto:
+## Estructura del Proyecto:
 
 El proyecto está organizado de la siguiente manera:
 
@@ -58,41 +58,41 @@ package.json: Archivo de configuración del proyecto que incluye las dependencia
 .gitignore: Archivo que especifica qué archivos y carpetas deben ser ignorados por Git.
 
 
-Instalación y Ejecución del Proyecto
+## Instalación y Ejecución del Proyecto
 
-Clona el repositorio desde GitHub:
+## Clona el repositorio desde GitHub:
 
 bash
 Copy code
-  git clone https://github.com/krisneiras/MusseumAPI.git
+     git clone https://github.com/krisneiras/MusseumAPI.git
 Navega hasta el directorio del proyecto:
 
 bash
 Copy code
-  cd project
+     cd project
 Instala las dependencias del proyecto:
 
 Copy code
-   npm install
+     npm install
 Ejecuta las migraciones de la base de datos para crear las tablas:
 
 Copy code
-   npx sequelize-cli db:migrate
+     npx sequelize-cli db:migrate
 Inicia el servidor en modo de desarrollo:
 
 arduino
 Copy code
-   npm run dev
+     npm run dev
 Esto iniciará el servidor en el puerto 5000 por defecto.
 
 Para ejecutar las pruebas automatizadas:
 
 arduino
 Copy code
-   npm run test
+     npm run test
 
 
-Dependencias del Proyecto
+## Dependencias del Proyecto
 
 Express.js: Framework web para Node.js utilizado para crear la API.
 Sequelize: ORM para interactuar con la base de datos relacional.
@@ -101,7 +101,7 @@ Jest: Framework de pruebas para JavaScript.
 Supertest: Librería para realizar pruebas de integración con API HTTP.
 Nodemon: Herramienta para reiniciar automáticamente el servidor cuando se realizan cambios en el código durante el desarrollo.
 
-Notas Adicionales
+## Notas Adicionales
 
 *Asegúrate de configurar correctamente tu archivo .env con las credenciales de tu base de datos.
 Si experimentas problemas con el puerto 5000 en uso, verifica que no haya otro proceso utilizando ese puerto. Puedes cambiar el puerto en el archivo app.js si es necesario.
