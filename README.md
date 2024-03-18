@@ -73,23 +73,23 @@ Copy code
 Instala las dependencias del proyecto:
 
 Copy code
-  npm install
+   npm install
 Ejecuta las migraciones de la base de datos para crear las tablas:
 
 Copy code
-  npx sequelize-cli db:migrate
+   npx sequelize-cli db:migrate
 Inicia el servidor en modo de desarrollo:
 
 arduino
 Copy code
-  npm run dev
+   npm run dev
 Esto iniciará el servidor en el puerto 5000 por defecto.
 
 Para ejecutar las pruebas automatizadas:
 
 arduino
 Copy code
-  npm run test
+   npm run test
 
 
 Dependencias del Proyecto
