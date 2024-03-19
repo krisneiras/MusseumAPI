@@ -9,6 +9,4 @@ const connection_db = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, { // sesta li
   dialect: "mysql"
 });
 
-
-
 export default connection_db;
