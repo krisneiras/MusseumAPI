@@ -6,6 +6,7 @@ import SculptureRouter from "./routes/SculptureRouter.js";
 import chalk from "chalk";
 import cors from "cors"
 
+<<<<<<< HEAD
 export const app = express();
 
 app.use(cors());
@@ -14,6 +15,8 @@ app.use(express.json()); // para que la aplicacion pueda soportar formato json d
 
 app.use("/api", SculptureRouter)
 
+=======
+>>>>>>> 233835bbb14c4885d161474e5f31330b23870f05
 try {
     await connection_db.authenticate();
     console.log(chalk.blueBright('Connection has been established successfully.🚀🚀🚀'));
