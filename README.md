@@ -16,12 +16,22 @@ Make sure you have Node.js installed.
 ```bash
 npm i
 ```
-Built with: 
+### Built with: 
 <div>
   <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-plain.svg" title="Javascript" title="Javascript" width="40" height="40">
 
   <img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-line-wordmark.svg?short_path=a51eaa1" title="Node.js" title="Node.js" width="40" height="40"> 
+
+  <img src="https://github.com/devicons/devicon/blob/master/icons/nodemon/nodemon-original.svg?short_path=8326d32" title="Nodemon" title="Nodemon" width="40" height="40"> 
+
+  <img src="https://github.com/devicons/devicon/blob/master/icons/sequelize/sequelize-plain-wordmark.svg" title="Sequelize" title="Sequelize" width="40" height="40"> 
+
+  <img src="https://github.com/devicons/devicon/blob/master/icons/mysql/mysql-plain-wordmark.svg" title="Mysql" title="Mysql" width="40" height="40"> 
+
+  <img src="https://github.com/devicons/devicon/blob/master/icons/express/express-original-wordmark.svg" title="Express" title="Express" width="40" height="40">
+
   <div/>
+
 - ### Step 2️⃣ Create and connect your DataBase
 
 In this project we created our DB with mysql, so you will have to create your database and call it sculptures and another one for the tests called sculptures_test.
