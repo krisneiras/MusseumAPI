@@ -3,6 +3,7 @@ import SculptureModel from "./models/SculptureModel.js";
 import express from "express";
 import { DB_PORT } from "./config.js";
 import SculptureRouter from "./routes/SculptureRouter.js";
+import chalk from "chalk";
 import cors from "cors";
 
 const app = express();
@@ -26,5 +27,6 @@ try {
   });
 
 export default app;
+console.log(chalk.bgMagenta.bold(`Server up in  http://localhost:${DB_PORT}/api`))
 
 
