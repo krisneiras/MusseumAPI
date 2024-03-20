@@ -1,0 +1,17 @@
+Para los testeos creamos una nueva base de datos, para no tocar la valida.
+
+y creamos en este caso CREATE DATABASE sculptures_test;
+
+METEMOS LA NUEVA BASE DE DATOS.
+
+DB_TEST_NAME=sculptures_test
+
+
+LO METEMOS EN EL CONFIG ASUI:
+export const DB_TEST_NAME = process.env.DB_TEST_NAME;
+export const NODE_ENV = process.env.NODE_ENV;
+
+
+
+
+
