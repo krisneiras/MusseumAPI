@@ -1,65 +1,79 @@
-import express from 'express';
-import { validationResult } from 'express-validator'; // Corrección en la importación de validationResult
-import Sculpture from '../models/SculptureModel.js';
+import SculptureModel from "../models/SculptureModel.js"
 
-const router = express.Router();
+//GET SCULPTURES
+export const getAllSculptures = async (request, response) =>{
 
-export const getAllSculptures = async (req, res) => {
-  try {
-    const sculptures = await Sculpture.findAll();
-    res.status(200).json(sculptures);
-  } catch (error) {
-    console.error('Error al recuperar las esculturas:', error);
-    res.status(500).json({ message: 'Error interno del servidor' });
-  }
-};
+    try{
+        const sculptures = await SculptureModel.findAll(); //findAll es un metodo que se va a sculptures y encuentra todo lo que hay
+        response.status(200).json(sculptures);//es 200 porque si la peticion get sale bien es 200
+      }
+      
+    catch(error){
+        response.status(500).json({message: error.message})
+    }
+}
 
-export const postSculpture = async (req, res) => {
-  try {
-
-    const newSculpture = await Sculpture.create(req.body)
-    // /{
-    //   image_url,
-    //   title,
-    //   author,
-    //   material,
-    //   year,
-    //   location
-    // });
-    res.status(201).json(newSculpture);
-  } catch (error) {
-    return res.status(500).json({ message: 'Error interno del servidor' });
-  }
-};
-
-export const putSculpture = async (req, res) => {
-  try {
-
-    await Sculpture.update(req.body, { where: { id: req.params.id } });
-    res.status(200).json({ message: 'Escultura actualizada correctamente' });
-  } catch (error) {
-    console.error('Error al actualizar la escultura:', error);
-    res.status(500).json({ message: 'Error interno del servidor' });
-  }
-};
+//DELETE 
 
 export const deleteSculpture = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const sculpture = await Sculpture.findByPk(id);
-    if (!sculpture) {
-      return res.status(404).json({ message: 'Escultura no encontrada' });
+    const sculptureId  = req.params.id; // Asumiendo que el ID se pasa como parámetro en la URL
+   
+    try {
+       const deletedSculpture = await SculptureModel.destroy({ where: { id: sculptureId } });
+        
+          res.status(201).json({ message: `Sculpture with ID ${sculptureId} deleted successfully`, sculpture: deletedSculpture });
+
+        } 
+    
+    catch (error) {
+       res.status(500).json({ message: 'Error al intentar eliminar la escultura', error });
     }
-    await sculpture.destroy();
-    res.status(200).json({ message: 'Escultura eliminada correctamente' });
-  } catch (error) {
-    console.error('Error al eliminar la escultura:', error);
-    res.status(500).json({ message: 'Error interno del servidor' });
+   };
+
+// POST (INSERT)
+
+export const addNewSculpture = async (req, response) =>{
+
+  try{
+    const newSculpture = await SculptureModel.create(req.body);
+    response.status(201).json(newSculpture)
   }
-};
 
+  catch(error){
+    response.status(500).json({message: error.message})
+}
+}
 
+//UPDATE  (PUT)
+export const editSculpture = async (req, response) =>{
 
+  const sculptureId  = req.params.id;
 
+  try{
+    await SculptureModel.update(req.body, {where: {id: sculptureId} }); 
+
+    const editedSculpture = await SculptureModel.findOne({ where: { id: sculptureId } });  // aqui  podria usar findByPk(id) que encuente mi primary key que es el id
+    response.status(200).json({ message: `Sculpture with ID ${sculptureId} updated successfully: `, sculpture: editedSculpture })  // la clausula where es importante porque sino eliminariamos o borrariamos toda la base de datos.
+  }
+
+  catch(error){
+    response.status(500).json({message: error.message})
+  }
+}
+ 
+//GET ONE SCULPTURE
+
+export const getOneSculpture = async (req, res) => {
+  const sculptureId  = req.params.id;
+
+  try{
+    const oneSculpture = await SculptureModel.findOne({ where: {id: sculptureId} });
+    res.status(200).json(oneSculpture);
+  }
+
+  catch(error){
+    res.status(500).json({message: error.message})
+  }
+}
 
 

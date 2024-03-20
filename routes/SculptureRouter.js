@@ -1,19 +1,26 @@
-import express from 'express'; 
-import { getAllSculptures, deleteSculpture, postSculpture, putSculpture } from '../controllers/SculptureController.js';
-import SculpturesValidator from '../validation/sculptureValidation.js'; 
+import express from "express";
+import { addNewSculpture, editSculpture, getAllSculptures, deleteSculpture, getOneSculpture } from "../controllers/SculptureController.js"
+import { sculptureValidationRules } from "../validators/SculptureValidator..js";
 
-const router = express.Router();
+const router = express.Router() //estamos invocado el enrutador
 
 router.get('/', getAllSculptures);
-router.post('/', SculpturesValidator, postSculpture); 
-router.put('/:id', SculpturesValidator, putSculpture); 
+
+//DELETE
+
 router.delete('/:id', deleteSculpture);
 
+// POST
+
+router.post('/', sculptureValidationRules, addNewSculpture);
+
+// PUT
+
+router.put('/:id', sculptureValidationRules, editSculpture);
+
+// GET ONE
+
+router.get('/:id', getOneSculpture);
+
+
 export default router;
-
-
-
-
-
-
-

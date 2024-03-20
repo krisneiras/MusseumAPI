@@ -1,12 +1,13 @@
-import { validationResult } from 'express-validator';
+import { validationResult } from "express-validator";
+
 
 const validateResult = (req, res, next) => {
-    const result = validationResult(req);
-    if (!result.isEmpty()) {
-        return res.status(400).json({ errors: result.array() });
+    try {
+        const result = validationResult(req)
+        result.throw()
+        return next()  //que pase al controlador
+    } catch(error) {
+        res.status(400).json({ errors: error.array() });
     }
-    next(); // Si no hay errores de validación, continúa con la siguiente función middleware
-};
-
+}
 export default validateResult;
-
