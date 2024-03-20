@@ -14,7 +14,6 @@ const sculpturesValidator =[
     check('year')
         .exists()
         .isNumeric()
-        .withMessage('Tiene q ser un dato númerico')
         .isLength({min: 3, max: 4}),
     (req, res, next) =>{
         validateResult(req, res, next)
