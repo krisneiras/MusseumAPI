@@ -3,9 +3,10 @@ import { PORT } from './config.js';
 import SculptureRouter from './routes/SculptureRouter.js';
 import connection_db from './database/connection_db.js';
 import Sculpture from './models/SculptureModel.js'
+import cors from "cors";
 
 const app = express();
-
+app.use(cors())
 app.use(express.json());
 
 app.use('/api', SculptureRouter);
