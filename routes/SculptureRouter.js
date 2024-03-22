@@ -7,6 +7,6 @@ const router = express.Router();
 router.get("/", getAllSculptures);
 router.post("/", sculpturesValidator, postSculpture);
 router.delete("/:id", deleteSculpture);
-router.put("/:id", putSculpture);
+router.put("/:id", sculpturesValidator, putSculpture);
 
 export default router;
