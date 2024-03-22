@@ -21,7 +21,7 @@ const sculpturesValidator =[
     check('year')
     .exists()
     .notEmpty()
-    .isInt({ min: 1, max: 2100}).withMessage("El año introducido no es correcto"),
+    .isInt({ min: 1, max: 2024 }).withMessage("El año introducido no es correcto"),
 
     check('location')
     .exists()
