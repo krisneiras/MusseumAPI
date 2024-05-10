@@ -16,7 +16,7 @@ Make sure you have Node.js installed.
 ```bash
 npm i
 ```
-### Built with: 
+### Develop with: 
 <div>
   <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-plain.svg" title="Javascript" title="Javascript" width="40" height="40">
 
