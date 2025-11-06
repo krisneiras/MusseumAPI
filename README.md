@@ -78,6 +78,6 @@ Keep in mind that you should have had created your testing database (sculptures_
 - Scrum Master: [Kristy](https://github.com/krisneiras)
 - Product Owner: [Eliana](https://github.com/Elianarve)
 - Web developer: [Elena](https://github.com/elenalope)
-- Web developer: [Lucero](https://github.com/JnogueraGonzalez)
-- Web developer: [Jessica](https://github.com/LuHeRiver)
+- Web developer: [Lucero](https://github.com/LuHeRiver)
+- Web developer: [Jessica](https://github.com/JnogueraGonzalez)
 
